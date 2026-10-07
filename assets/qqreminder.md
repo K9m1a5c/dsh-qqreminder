@@ -36,6 +36,68 @@ description: 在本机 QQ 群聊记录里检索话题、生成摘要、找出"�
 `messages` 字段：`msg_id, ts, day, hour, group_code, group_name, sender_uid, sender_qq,
 sender_name, direction, msg_type, subtype, kind, text, reply_seq`
 
+### 1.1 如果 `index.db` 不存在 —— 怎么帮用户建起来
+
+**本插件只做「分析」。** 索引 `index.db` 需要用户自己准备 —— 本仓库不含任何解密代码。
+当用户说"翻一下群"但 `<ROOT>/qgd/data/index.db` 不存在时，按下面四步帮他：
+
+**第 1 步 · 先问清楚**
+> "你有一个【已经解密的】QQ 消息数据库吗？通常在 `nt_msg.db` 这样的文件里。"
+
+- 有 → 直接跳到第 3 步
+- 没有 → 第 2 步
+
+**第 2 步 · 指路（★ 不要替用户做，也不要替用户判断安全性）**
+
+QQ 的本地数据库是加密的，**解密不在本插件范围内**。如实告诉用户：
+社区里有专门做这件事的开源项目，例如 `QQBackup/QQDecrypt`、`NapNeko/qq_dump_db`。
+
+- ★ **必须说清**：这些工具与本插件**没有任何关联**，可能涉及逆向工程，
+  **请用户自行评估合规性与风险**。
+- ★ **不要**说"保证安全""官方推荐"这类话。
+- ★ **不要**帮用户下载或运行这些工具。
+
+**第 3 步 · 从明文库建索引**
+
+明文库通常是 SQLite（表名可能是 `group_msg_table` 之类，**随 QQ 版本变化**）。
+先让用户确认文件路径，然后**写一个一次性的转换脚本**（跑完即可丢弃，不必保存）。
+
+要生成的三张表（与 `engine/load_example.py` 的写法完全一致）：
+
+```sql
+messages(msg_id INTEGER PRIMARY KEY, ts INTEGER, day TEXT, hour INTEGER,
+         group_code TEXT, group_name TEXT, sender_uid TEXT, sender_qq TEXT,
+         sender_name TEXT, direction TEXT, msg_type INTEGER, subtype INTEGER,
+         kind TEXT, text TEXT, reply_seq INTEGER)
+
+groups(group_code TEXT PRIMARY KEY, group_name TEXT, weight REAL,
+       msg_count INTEGER, last_ts INTEGER)
+
+meta(key TEXT PRIMARY KEY, value TEXT)
+```
+
+★ 五个必须做对的点：
+1. **`ts` 是秒级 Unix 时间戳**（不是毫秒，不是字符串）
+2. **`meta` 里必须有 `cutoff_ts`** —— 报告和摘要靠它声明"数据截止到几点"，缺了会报错
+3. **`group_name` 填群名**（不是群号）；`sender_name` 填昵称
+4. **`direction`**：自己发的填 `out`，别人发的填 `in`
+5. **`msg_id` 要唯一**（用原始库的 id 或自增都行）
+
+★ **先摸清明文库的结构再动手**：把它的表名和 `CREATE TABLE` 语句列出来看一遍，
+不要照搬上面的字段名 —— 原库的字段名几乎肯定不一样，**要做的是映射**。
+
+**第 4 步 · 验证**
+
+```bash
+python <插件目录>/engine/score.py --days 7 --top 3
+```
+
+- 能出「QQ 群摘要」 → 成功，去查 `<ROOT>/qgd/authorization.json` 把 `qq_read` 设为 `true`
+- 报 "找不到索引" → 路径不对，检查 `<ROOT>/qgd/data/index.db`
+- 出摘要但内容为空 → `cutoff_ts` 或 `ts` 单位错了
+
+★ **每写完一步都真跑一次**，不要写完一堆再一起试。
+
 ## 2. 三个常用动作
 
 ### ① 话题检索（"帮我找群里关于 X 的信息"）

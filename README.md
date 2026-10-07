@@ -135,6 +135,47 @@ meta(key TEXT PRIMARY KEY, value TEXT)   -- cutoff_ts / built_at / read_errors .
 
 `engine/load_example.py` 就是照着这个结构写数据的，**可以直接当参考实现看**。
 
+### 方式 C：用第三方工具解密 QQ 数据库（自行评估）
+
+QQreminder **只做分析**。「从 QQ 数据库提取消息」这一步**不在本插件范围内** ——
+本仓库不包含任何解密代码。
+
+如果你需要那一步，社区里有专门做这件事的开源项目：
+
+| 项目 | 用途 |
+|---|---|
+| [QQBackup/QQDecrypt](https://github.com/QQBackup/QQDecrypt) | 解密 QQ 本地数据库 |
+| [QQBackup/nt_msg_db_util](https://github.com/QQBackup/nt_msg_db_util) | 消息数据库解析工具 |
+| [NapNeko/qq_dump_db](https://github.com/NapNeko/qq_dump_db) | 导出 QQ 数据库 |
+
+拿到解密后的数据，按上面「方式 B」的表结构整理成 `index.db`，本插件就能用。
+
+> ⚠️ **这些工具与本项目没有任何关联。** 它们涉及处理 QQ 的加密数据库，
+> 可能包含逆向工程相关内容 —— 请**自行评估合规性与风险**。
+> 本项目不为其行为负责，也不提供相关技术支持。
+
+
+### 方式 D：直接让 AI 帮你搞定（装了插件之后）
+
+装好插件，直接对你的 AI 说：
+
+> **"我的 QQ 群消息太多了，帮我整理一下。如果我没有数据，告诉我怎么弄。"**
+
+AI 会读插件自带的说明（`assets/qqreminder.md`），然后带你走完：
+
+```
+① 告诉你去哪拿一个【已经解密的】QQ 消息数据库
+      （解密不在本插件范围内，它会指路并说明风险）
+② 你拿到文件之后，把路径告诉它
+③ 它自己探索那个库的结构，写转换、生成 index.db
+④ 然后就能出报告 / 摘要 / 话题检索了
+```
+
+**⭐ 说明书就在插件里** —— 装上之后，AI 自己就知道该怎么做，你不用研究任何格式。
+
+> 这也是本插件唯一"需要用户配合"的一步：拿到明文数据库。
+> 除此之外全程由 AI 完成。
+
 ### 配置：`focus.json`
 
 ```jsonc
