@@ -7,7 +7,7 @@
 >
 > QQreminder 就是干这个的：**把"我该知道的"从"我错过的"里挑出来。**
 
-给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 用的插件。
+给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harne) 用的插件。
 **全程本地、只读、不登录、不联网上传。**
 
 ---
@@ -77,14 +77,14 @@ AI 会自己调 `qq_search` / `qq_digest`，**不需要你记任何命令**。
 
 ```bash
 # 从 GitHub 装（需要 DSH 0.2.0+）
-dsh plugin add https://github.com/<you>/qqreminder
+dsh plugin add https://github.com/K9m1a5c/dsh-qqreminder
 ```
 
 或者本地打包：
 
 ```bash
-git clone https://github.com/<you>/qqreminder
-cd qqreminder
+git clone https://github.com/K9m1a5c/dsh-qqreminder
+cd dsh-qqreminder
 npm pack
 dsh plugin add dsh-qqreminder-*.tgz
 ```
