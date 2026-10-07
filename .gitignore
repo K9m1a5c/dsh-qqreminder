@@ -1,0 +1,21 @@
+# 运行时产物
+__pycache__/
+*.pyc
+*.pyo
+node_modules/
+
+# 打包产物
+*.tgz
+*.zip
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 你自己的数据（QQreminder 的数据目录不该进仓库）
+data/
+qgd/
+out/
+*.local.*
