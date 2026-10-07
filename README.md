@@ -7,7 +7,7 @@
 >
 > QQreminder 就是干这个的：**把"我该知道的"从"我错过的"里挑出来。**
 
-给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harne) 用的插件。
+给 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 用的插件。
 **全程本地、只读、不登录、不联网上传。**
 
 ---
