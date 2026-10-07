@@ -1,0 +1,4 @@
+# dsh-qqreminder bundle patch: 把自己的宿主插件插进插件树。
+- insert:
+    - id: qqreminder
+      name: 'dsh-qqreminder'

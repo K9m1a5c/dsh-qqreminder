@@ -1,0 +1,43 @@
+{
+  "name": "dsh-qqreminder",
+  "version": "1.0.0",
+  "description": "QQreminder · DSH plugin: turn local QQ group chats into a clickable HTML report plus a missed-important-messages digest — custom date range, drill into each group, one-click onboarding, all local and read-only. QQreminder · DSH 插件：把本机 QQ 群聊整理成可点击的 HTML 报告与「你可能漏了」提醒（日期区间自选、可点进每个群、全本地只读）",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "lib",
+    "engine",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "qq",
+    "qq-group",
+    "chat-digest",
+    "digest",
+    "summary",
+    "群聊",
+    "群聊摘要",
+    "重要信息"
+  ],
+  "license": "MIT"
+}

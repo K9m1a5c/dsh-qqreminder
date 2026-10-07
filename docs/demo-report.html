@@ -1,0 +1,285 @@
+<!doctype html><html lang='zh-CN'><head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width,initial-scale=1'>
+<title>QQ 群摘要 · 2026-09-29 ~ 2026-10-06</title>
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--fg:#18181b;--muted:#71717a;--line:#e7e7ea;
+      --brand:#2563eb;--warn:#d97706;--radius:12px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+     font:15px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+     -webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:40px 20px 90px}
+h1{font-size:25px;margin:0 0 8px;letter-spacing:-.02em}
+h2{font-size:17px;margin:38px 0 14px;padding-bottom:9px;border-bottom:1px solid var(--line);
+   display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+h2 .cnt{color:var(--muted);font-weight:400;font-size:14px}
+.sub{color:var(--muted);font-size:13.5px}
+.warnline{color:#b45309;font-size:13.5px;margin-top:6px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:24px 0 6px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.stat b{display:block;font-size:23px;line-height:1.25;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:12.5px}
+.stat.clickable{cursor:pointer;position:relative;transition:.15s}
+.stat.clickable:hover{border-color:var(--brand);transform:translateY(-1px);box-shadow:0 3px 12px rgba(37,99,235,.10)}
+.stat.clickable .jump{position:absolute;right:12px;top:11px;color:var(--brand);font-size:12px;opacity:0;transition:.15s}
+.stat.clickable:hover .jump{opacity:1}
+.flash{animation:fl 1.1s ease-out}
+@keyframes fl{0%{background:#dbeafe}100%{background:transparent}}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+       padding:14px 16px 26px;cursor:pointer;transition:.15s;position:relative}
+.gcard:hover{border-color:var(--brand);transform:translateY(-1px);box-shadow:0 3px 12px rgba(37,99,235,.10)}
+.gcard .nm{font-weight:600;font-size:14px;line-height:1.45;margin-bottom:8px;
+           display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.gcard .kv{color:var(--muted);font-size:12.5px;display:flex;flex-wrap:wrap;gap:4px 10px}
+.gcard .kv b{color:var(--fg);font-variant-numeric:tabular-nums}
+.gcard .go{position:absolute;right:14px;bottom:10px;color:var(--brand);font-size:12.5px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin:28px 0 4px}
+.tab{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:5px 13px;
+     font-size:13px;cursor:pointer;color:var(--muted);max-width:250px;overflow:hidden;
+     text-overflow:ellipsis;white-space:nowrap;transition:.15s;font-family:inherit}
+.tab:hover{border-color:#c7c7cc;color:var(--fg)}
+.tab.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.page{display:none}
+.page.active{display:block}
+.item{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+      padding:15px 17px;margin-bottom:11px;transition:border-color .15s}
+.item:hover{border-color:#d4d4d8}
+.item.miss{border-left:3px solid var(--warn);border-radius:4px var(--radius) var(--radius) 4px}
+.top{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.who{font-weight:600}
+.grp{color:var(--muted);font-size:12.5px;font-weight:400;margin-left:6px}
+.meta{color:var(--muted);font-size:12.5px;white-space:nowrap}
+.score{font-variant-numeric:tabular-nums;font-weight:700;color:var(--brand);font-size:14px}
+.body{margin:11px 0 12px;white-space:pre-wrap;word-break:break-word;color:#27272a}
+.why{display:flex;flex-wrap:wrap;gap:6px}
+.tag{background:#eff6ff;color:#1d4ed8;border-radius:6px;padding:2px 8px;font-size:12px;white-space:nowrap}
+.tag.warn{background:#fffbeb;color:#b45309}
+.tag.stale{background:#fef2f2;color:#b91c1c}
+.bars{margin-top:6px}
+.bar{display:flex;align-items:center;gap:10px;margin:7px 0;font-size:13px;cursor:pointer}
+.bar:hover .n{color:var(--brand)}
+.bar .n{width:230px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:0 0 auto}
+.bar .fill{height:13px;background:linear-gradient(90deg,#3b82f6,#2563eb);border-radius:7px;min-width:3px}
+.bar .v{color:var(--muted);font-variant-numeric:tabular-nums;font-size:12.5px}
+.back{margin:18px 0 4px}
+.back button{background:none;border:none;color:var(--brand);cursor:pointer;font-size:13.5px;padding:0;font-family:inherit}
+.empty{color:var(--muted);font-size:14px;padding:14px 0}
+footer{margin-top:52px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);padding-top:18px;
+       display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+@media(max-width:600px){.bar .n{width:110px}.wrap{padding:26px 14px 60px}}
+</style></head><body><div class='wrap'>
+<h1>QQ 群摘要</h1>
+<div class='sub'>2026-09-29 15:46 ~ 2026-10-06 15:46 &nbsp;·&nbsp; 数据截止 <b>10-06 13:20</b>（距现在 146 分钟）</div>
+<div class='warnline'>⚠️ 数据已过去 2.4 小时 —— 要最新内容请先登录 QQ 再刷新索引。</div>
+<div class='summary'>
+<div class='stat clickable' onclick="jump('sec-bars')" title='看群消息分布'><span class='jump'>↓</span><b>38</b><span>有效消息</span></div>
+<div class='stat clickable' onclick="jump('sec-groups')" title='看关键群卡片'><span class='jump'>↓</span><b>6</b><span>涉及群</span></div>
+<div class='stat clickable' onclick="jump('sec-top')" title='看最重要条目'><span class='jump'>↓</span><b>10</b><span>重点条目</span></div>
+<div class='stat clickable' onclick="jump('sec-missed')" title='看遗漏提醒'><span class='jump'>↓</span><b>2</b><span>疑似遗漏</span></div>
+<div class='stat clickable' onclick="jump('sec-bars')" title='看群消息分布'><span class='jump'>↓</span><b>11</b><span>发言人数</span></div>
+</div>
+<div class='tabs'>
+<button class='tab active' data-id='all' onclick="go('all')">总览</button>
+<button class='tab' data-id='g0' onclick="go('g0')" title='临江大学·计算机学院2026级通知群'>临江大学·计算机学院2026级通知群</button>
+<button class='tab' data-id='g1' onclick="go('g1')" title='嵌入式学习小组'>嵌入式学习小组</button>
+<button class='tab' data-id='g2' onclick="go('g2')" title='AI创新社·2026招新群'>AI创新社·2026招新群</button>
+<button class='tab' data-id='g3' onclick="go('g3')" title='计科2601班级群'>计科2601班级群</button>
+<button class='tab' data-id='g4' onclick="go('g4')" title='摸鱼吹水群'>摸鱼吹水群</button>
+<button class='tab' data-id='g5' onclick="go('g5')" title='校园二手交易群'>校园二手交易群</button>
+</div>
+<section id='all' class='page active'>
+<h2 id='sec-groups'>🗂 关键群 <span class='cnt'>点卡片进入该群</span></h2>
+<div class='grid'>
+<div class='gcard' onclick="go('g0')">
+<div class='nm'>临江大学·计算机学院2026级通知群</div>
+<div class='kv'><span>消息 <b>6</b></span><span>重点 <b>5</b></span></div>
+<div class='go'>查看 →</div></div>
+<div class='gcard' onclick="go('g1')">
+<div class='nm'>嵌入式学习小组</div>
+<div class='kv'><span>消息 <b>8</b></span><span>重点 <b>3</b></span></div>
+<div class='go'>查看 →</div></div>
+<div class='gcard' onclick="go('g2')">
+<div class='nm'>AI创新社·2026招新群</div>
+<div class='kv'><span>消息 <b>3</b></span><span>重点 <b>3</b></span></div>
+<div class='go'>查看 →</div></div>
+<div class='gcard' onclick="go('g3')">
+<div class='nm'>计科2601班级群</div>
+<div class='kv'><span>消息 <b>11</b></span><span>重点 <b>2</b></span></div>
+<div class='go'>查看 →</div></div>
+<div class='gcard' onclick="go('g4')">
+<div class='nm'>摸鱼吹水群</div>
+<div class='kv'><span>消息 <b>6</b></span><span>重点 <b>1</b></span></div>
+<div class='go'>查看 →</div></div>
+<div class='gcard' onclick="go('g5')">
+<div class='nm'>校园二手交易群</div>
+<div class='kv'><span>消息 <b>4</b></span><span>重点 <b>0</b></span></div>
+<div class='go'>查看 →</div></div>
+</div>
+<h2 id='sec-top'>📌 最重要 <span class='cnt'>10 条（跨群）</span></h2>
+<div class='item'>
+<div class='top'><div class='who'>周老师（教务）（管理员）<span class='grp'>临江大学·计算机学院2026级通知群</span></div><div><span class='score'>18.0 分</span> <span class='meta'>10-02 14:30</span></div></div>
+<div class='body'>【竞赛通知】全国大学生数学建模竞赛校内选拔开始报名，报名截止10月20日，组队3人。有意向的同学联系我。</div>
+<div class='why'><span class='tag'>命中关注词「截止」+6</span><span class='tag'>通知类强词「通知」「截止」「报名」+3</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>周老师（教务）（管理员）<span class='grp'>临江大学·计算机学院2026级通知群</span></div><div><span class='score'>16.0 分</span> <span class='meta'>09-30 10:05</span></div></div>
+<div class='body'>【重要】关于国家励志奖学金、助学金的申请通知：请符合条件的同学在10月15日前将申请表交至学院办公室B203，逾期不再受理。</div>
+<div class='why'><span class='tag'>命中关注词「通知」+5</span><span class='tag'>通知类强词「通知」「重要」+3</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>刘老师（辅导员）（管理员）<span class='grp'>临江大学·计算机学院2026级通知群</span></div><div><span class='score'>14.0 分</span> <span class='meta'>10-05 08:50</span></div></div>
+<div class='body'>@全体成员 【提醒】10月8日晚自习第一天请务必准时到场，迟到会记录在考勤表上。请假需提前一天在系统提交申请。</div>
+<div class='why'><span class='tag'>命中关注词「请假」+4</span><span class='tag'>通知类强词「全体成员」「务必」+3</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>王雨桐<span class='grp'>临江大学·计算机学院2026级通知群</span></div><div><span class='score'>14.0 分</span> <span class='meta'>10-03 16:40</span></div></div>
+<div class='body'>老师，请问选课系统打不开是正常的吗？</div>
+<div class='why'><span class='tag'>命中关注词「选课」+6</span><span class='tag'>通知类弱词「请」+1</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>班助孙浩然（群主）<span class='grp'>计科2601班级群</span></div><div><span class='score'>12.6 分</span> <span class='meta'>10-04 21:30</span></div></div>
+<div class='body'>【重要】下周三下午2点在教学楼305开班会，主题是学业规划，请全员参加，会点名。</div>
+<div class='why'><span class='tag'>命中关注词「班会」+4</span><span class='tag'>通知类强词「重要」+3</span><span class='tag'>× 群权重 1.8</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>社长陈子豪（群主）<span class='grp'>AI创新社·2026招新群</span></div><div><span class='score'>11.2 分</span> <span class='meta'>10-01 10:20</span></div></div>
+<div class='body'>【通知】宣讲会改到周日下午2点，地点不变。已经报名的同学不用重复报名。</div>
+<div class='why'><span class='tag'>命中关注词「报名」+5</span><span class='tag'>通知类强词「通知」「报名」+3</span><span class='tag'>× 群权重 1.4</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>社长陈子豪（群主）<span class='grp'>AI创新社·2026招新群</span></div><div><span class='score'>9.8 分</span> <span class='meta'>10-03 19:40</span></div></div>
+<div class='body'>【面试安排】通过初筛的同学会在10月9日前收到短信，面试在10月11日-12日。请留意手机。</div>
+<div class='why'><span class='tag'>命中关注词「面试」+4</span><span class='tag'>通知类强词「面试安排」+3</span><span class='tag'>× 群权重 1.4</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>社长陈子豪（群主）<span class='grp'>AI创新社·2026招新群</span></div><div><span class='score'>5.6 分</span> <span class='meta'>10-05 21:00</span></div></div>
+<div class='body'>社团这学期会带大家做一个完整的小项目，从数据到部署，感兴趣的可以提前看看Python基础。</div>
+<div class='why'><span class='tag'>命中关注词「项目」+4</span><span class='tag'>× 群权重 1.4</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>学长林远航（嵌入式）（管理员）<span class='grp'>嵌入式学习小组</span></div><div><span class='score'>5.2 分</span> <span class='meta'>10-02 19:30</span></div></div>
+<div class='body'>【活动】实验室这周六开放日，可以来现场看看我们在做的项目，地址在工程训练中心3楼。</div>
+<div class='why'><span class='tag'>命中关注词「实验室」+4</span><span class='tag'>× 群权重 1.3</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>学长林远航（嵌入式）（管理员）<span class='grp'>嵌入式学习小组</span></div><div><span class='score'>3.9 分</span> <span class='meta'>09-30 20:08</span></div></div>
+<div class='body'>【资料】我整理了一份STM32入门路线，放在群文件了，从GPIO到定时器到串口，按顺序看就行。</div>
+<div class='why'><span class='tag'>命中关注词「资料」+3</span><span class='tag'>× 群权重 1.3</span></div>
+</div>
+<h2 id='sec-missed'>⚠️ 你可能漏了 <span class='cnt'>2 条</span></h2>
+<div class='item miss'>
+<div class='top'><div class='who'>学长林远航（嵌入式）（管理员）<span class='grp'>嵌入式学习小组</span></div><div><span class='score'>5.2 分</span> <span class='meta'>10-02 19:30</span></div></div>
+<div class='body'>【活动】实验室这周六开放日，可以来现场看看我们在做的项目，地址在工程训练中心3楼。</div>
+<div class='why'><span class='tag warn'>含「开放」（时效）</span><span class='tag stale'>已过期 4 天</span></div>
+</div>
+<div class='item miss'>
+<div class='top'><div class='who'>摸鱼达人（群主）<span class='grp'>摸鱼吹水群</span></div><div><span class='score'>2.5 分</span> <span class='meta'>09-30 22:30</span></div></div>
+<div class='body'>有没有人还在写作业的</div>
+<div class='why'><span class='tag warn'>含「有没有」（疑问）</span></div>
+</div>
+<h2 id='sec-bars'>📊 群消息分布 <span class='cnt'>点条目进入该群</span></h2><div class='bars'>
+<div class='bar' onclick="go('g0')"><div class='n'>临江大学·计算机学院2026级通知群</div><div class='fill' style='width:54%'></div><div class='v'>6</div></div>
+<div class='bar' onclick="go('g1')"><div class='n'>嵌入式学习小组</div><div class='fill' style='width:72%'></div><div class='v'>8</div></div>
+<div class='bar' onclick="go('g2')"><div class='n'>AI创新社·2026招新群</div><div class='fill' style='width:27%'></div><div class='v'>3</div></div>
+<div class='bar' onclick="go('g3')"><div class='n'>计科2601班级群</div><div class='fill' style='width:100%'></div><div class='v'>11</div></div>
+<div class='bar' onclick="go('g4')"><div class='n'>摸鱼吹水群</div><div class='fill' style='width:54%'></div><div class='v'>6</div></div>
+<div class='bar' onclick="go('g5')"><div class='n'>校园二手交易群</div><div class='fill' style='width:36%'></div><div class='v'>4</div></div>
+</div></section>
+<section id='g0' class='page'>
+<div class='back'><button onclick="go('all')">← 返回总览</button></div>
+<h2>临江大学·计算机学院2026级通知群 <span class='cnt'>窗口内 6 条 · 其中重点 5 条</span></h2>
+<div class='item'>
+<div class='top'><div class='who'>周老师（教务）（管理员）</div><div><span class='score'>18.0 分</span> <span class='meta'>10-02 14:30</span></div></div>
+<div class='body'>【竞赛通知】全国大学生数学建模竞赛校内选拔开始报名，报名截止10月20日，组队3人。有意向的同学联系我。</div>
+<div class='why'><span class='tag'>命中关注词「截止」+6</span><span class='tag'>通知类强词「通知」「截止」「报名」+3</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>周老师（教务）（管理员）</div><div><span class='score'>16.0 分</span> <span class='meta'>09-30 10:05</span></div></div>
+<div class='body'>【重要】关于国家励志奖学金、助学金的申请通知：请符合条件的同学在10月15日前将申请表交至学院办公室B203，逾期不再受理。</div>
+<div class='why'><span class='tag'>命中关注词「通知」+5</span><span class='tag'>通知类强词「通知」「重要」+3</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>刘老师（辅导员）（管理员）</div><div><span class='score'>14.0 分</span> <span class='meta'>10-05 08:50</span></div></div>
+<div class='body'>@全体成员 【提醒】10月8日晚自习第一天请务必准时到场，迟到会记录在考勤表上。请假需提前一天在系统提交申请。</div>
+<div class='why'><span class='tag'>命中关注词「请假」+4</span><span class='tag'>通知类强词「全体成员」「务必」+3</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>王雨桐</div><div><span class='score'>14.0 分</span> <span class='meta'>10-03 16:40</span></div></div>
+<div class='body'>老师，请问选课系统打不开是正常的吗？</div>
+<div class='why'><span class='tag'>命中关注词「选课」+6</span><span class='tag'>通知类弱词「请」+1</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>刘老师（辅导员）（管理员）</div><div><span class='score'>2.0 分</span> <span class='meta'>09-30 10:08</span></div></div>
+<div class='body'>另外提醒一下，国庆期间宿舍楼晚11点关门，外出注意安全。返校需要提前在今日校园做行程报备。</div>
+<div class='why'><span class='tag'>通知类弱词「提醒」「注意」+1</span><span class='tag'>× 群权重 2.0</span></div>
+</div>
+</section>
+<section id='g1' class='page'>
+<div class='back'><button onclick="go('all')">← 返回总览</button></div>
+<h2>嵌入式学习小组 <span class='cnt'>窗口内 8 条 · 其中重点 3 条</span></h2>
+<div class='item'>
+<div class='top'><div class='who'>学长林远航（嵌入式）（管理员）</div><div><span class='score'>5.2 分</span> <span class='meta'>10-02 19:30</span></div></div>
+<div class='body'>【活动】实验室这周六开放日，可以来现场看看我们在做的项目，地址在工程训练中心3楼。</div>
+<div class='why'><span class='tag'>命中关注词「实验室」+4</span><span class='tag'>× 群权重 1.3</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>学长林远航（嵌入式）（管理员）</div><div><span class='score'>3.9 分</span> <span class='meta'>09-30 20:08</span></div></div>
+<div class='body'>【资料】我整理了一份STM32入门路线，放在群文件了，从GPIO到定时器到串口，按顺序看就行。</div>
+<div class='why'><span class='tag'>命中关注词「资料」+3</span><span class='tag'>× 群权重 1.3</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>?</div><div><span class='score'>1.3 分</span> <span class='meta'>10-04 22:10</span></div></div>
+<div class='body'>请问开发板买哪款比较好</div>
+<div class='why'><span class='tag'>通知类弱词「请」+1</span><span class='tag'>× 群权重 1.3</span></div>
+</div>
+</section>
+<section id='g2' class='page'>
+<div class='back'><button onclick="go('all')">← 返回总览</button></div>
+<h2>AI创新社·2026招新群 <span class='cnt'>窗口内 3 条 · 其中重点 3 条</span></h2>
+<div class='item'>
+<div class='top'><div class='who'>社长陈子豪（群主）</div><div><span class='score'>11.2 分</span> <span class='meta'>10-01 10:20</span></div></div>
+<div class='body'>【通知】宣讲会改到周日下午2点，地点不变。已经报名的同学不用重复报名。</div>
+<div class='why'><span class='tag'>命中关注词「报名」+5</span><span class='tag'>通知类强词「通知」「报名」+3</span><span class='tag'>× 群权重 1.4</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>社长陈子豪（群主）</div><div><span class='score'>9.8 分</span> <span class='meta'>10-03 19:40</span></div></div>
+<div class='body'>【面试安排】通过初筛的同学会在10月9日前收到短信，面试在10月11日-12日。请留意手机。</div>
+<div class='why'><span class='tag'>命中关注词「面试」+4</span><span class='tag'>通知类强词「面试安排」+3</span><span class='tag'>× 群权重 1.4</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>社长陈子豪（群主）</div><div><span class='score'>5.6 分</span> <span class='meta'>10-05 21:00</span></div></div>
+<div class='body'>社团这学期会带大家做一个完整的小项目，从数据到部署，感兴趣的可以提前看看Python基础。</div>
+<div class='why'><span class='tag'>命中关注词「项目」+4</span><span class='tag'>× 群权重 1.4</span></div>
+</div>
+</section>
+<section id='g3' class='page'>
+<div class='back'><button onclick="go('all')">← 返回总览</button></div>
+<h2>计科2601班级群 <span class='cnt'>窗口内 11 条 · 其中重点 2 条</span></h2>
+<div class='item'>
+<div class='top'><div class='who'>班助孙浩然（群主）</div><div><span class='score'>12.6 分</span> <span class='meta'>10-04 21:30</span></div></div>
+<div class='body'>【重要】下周三下午2点在教学楼305开班会，主题是学业规划，请全员参加，会点名。</div>
+<div class='why'><span class='tag'>命中关注词「班会」+4</span><span class='tag'>通知类强词「重要」+3</span><span class='tag'>× 群权重 1.8</span></div>
+</div>
+<div class='item'>
+<div class='top'><div class='who'>?</div><div><span class='score'>1.8 分</span> <span class='meta'>09-30 19:22</span></div></div>
+<div class='body'>请问英语教材一定要买新书吗？我看了下价格有点贵</div>
+<div class='why'><span class='tag'>通知类弱词「请」+1</span><span class='tag'>× 群权重 1.8</span></div>
+</div>
+</section>
+<section id='g4' class='page'>
+<div class='back'><button onclick="go('all')">← 返回总览</button></div>
+<h2>摸鱼吹水群 <span class='cnt'>窗口内 6 条 · 其中重点 1 条</span></h2>
+<div class='item'>
+<div class='top'><div class='who'>摸鱼达人（群主）</div><div><span class='score'>2.5 分</span> <span class='meta'>09-30 22:30</span></div></div>
+<div class='body'>有没有人还在写作业的</div>
+<div class='why'><span class='tag'>命中关注词「作业」+5</span><span class='tag'>× 群权重 0.5</span></div>
+</div>
+</section>
+<section id='g5' class='page'>
+<div class='back'><button onclick="go('all')">← 返回总览</button></div>
+<h2>校园二手交易群 <span class='cnt'>窗口内 4 条 · 其中重点 0 条</span></h2>
+<div class='empty'>这个群里没有达到阈值的消息（多半是纯闲聊）。</div>
+</section>
+<footer><div>由 dsh-qq-digest 生成 · 全程本地、只读</div><div>生成于 2026-10-06 15:46</div></footer>
+</div><script>function go(id){var ps=document.querySelectorAll('.page');for(var i=0;i<ps.length;i++)ps[i].classList.toggle('active',ps[i].id===id);var ts=document.querySelectorAll('.tab');for(var j=0;j<ts.length;j++)ts[j].classList.toggle('active',ts[j].getAttribute('data-id')===id);window.scrollTo(0,0);}function jump(id){go('all');setTimeout(function(){var el=document.getElementById(id);if(!el)return;el.scrollIntoView({behavior:'smooth',block:'start'});el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');},40);}</script></body></html>
